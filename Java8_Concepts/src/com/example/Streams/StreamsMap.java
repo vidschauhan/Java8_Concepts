@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.test.common.Person;
+import com.example.common.Person;
 
 /**
  * @author Vidit 
