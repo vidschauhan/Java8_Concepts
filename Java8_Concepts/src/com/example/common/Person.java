@@ -43,6 +43,8 @@ public class Person {
 		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + "]";
 	}
 	
+	public Person(){};
+	
 	
 	
 }

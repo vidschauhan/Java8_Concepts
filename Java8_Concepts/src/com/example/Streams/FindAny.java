@@ -2,8 +2,10 @@ package com.example.Streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.example.common.Person;
 
@@ -34,6 +36,7 @@ public class FindAny {
 		int sum = personList.stream().collect(Collectors.summingInt(Person::getAge));
 		int x = personList.stream().filter(p -> p.getAge() > 60).collect(Collectors.summingInt(Person::getAge)); // appliying filter before summing age
 		System.out.println(sum + " ," + x);
+		
 	}
 
 }
