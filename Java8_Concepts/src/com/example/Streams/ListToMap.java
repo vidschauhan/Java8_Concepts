@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -49,6 +50,11 @@ public class ListToMap {
 												.collect(Collectors.toMap(Person::getAge,Person::getFirstName,(oldValue, newValue) -> oldValue));
 		
 		maplist.forEach((k,v)-> System.out.println(k + " : " +v));
+		
+		AtomicInteger index = new AtomicInteger(1);
+		Map<Integer,String> maplst =  single.stream().collect(
+	            Collectors.toMap( s -> index.getAndIncrement(),s -> s,(oldV, newV)->newV));
+		maplst.entrySet().stream().forEach(System.out::println);
 	}
 
 }
